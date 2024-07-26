@@ -1,0 +1,27 @@
+tt_content.hyperlinks_default =< lib.contentElement
+tt_content.hyperlinks_default {
+    templateRootPaths.10 = EXT:hyperlinks/Resources/Private/Templates/
+    templateRootPaths.20 = {$hyperlinks.templateRootPaths}
+    partialRootPaths.10 = EXT:hyperlinks/Resources/Private/Partials/
+    partialRootPaths.20 = {$hyperlinks.partialRootPaths}
+    templateName = Hyperlinks
+    stdWrap {
+        editIcons = tt_content: header [header_layout], pages
+        editIcons.iconTitle.data = LLL:EXT:fluid_styled_content/Resources/Private/Language/FrontendEditing.xlf:editIcon.menu
+    }
+}
+
+tt_content.hyperlinks_selected < tt_content.hyperlinks_default
+tt_content.hyperlinks_selected {
+    dataProcessing.10 = TYPO3\CMS\Frontend\DataProcessing\DatabaseQueryProcessor
+    dataProcessing.10 {
+      table = tx_hyperlinks_domain_model_hyperlink
+      selectFields = tx_hyperlinks_domain_model_hyperlink.*
+      pidInList.field = pid
+      recursive = 99
+      join = tx_hyperlinks_mm ON (tx_hyperlinks_mm.uid_local=tx_hyperlinks_domain_model_hyperlink.uid)
+      where.dataWrap = tx_hyperlinks_mm.uid_foreign = {field:uid}
+      orderBy = sorting_foreign
+      as = hyperlinks
+    }
+}

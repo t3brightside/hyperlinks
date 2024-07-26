@@ -1,0 +1,13 @@
+mod.wizards.newContentElement.wizardItems.common {
+  elements {
+    hyperlinks_selected {
+      iconIdentifier = mimetypes-x-content-link
+      title = Hyperlinks
+      description = List of selected links
+      tt_content_defValues {
+        CType = hyperlinks_selected
+      }
+    }
+  }
+  show := addToList(hyperlinks_selected)
+}

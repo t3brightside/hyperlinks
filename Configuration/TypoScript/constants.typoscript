@@ -1,0 +1,2 @@
+# cat=Hyperlinks/hyperlinks; type=string; label= Templates root path
+hyperlinks.templateRootPaths = EXT:hyperlinks/Resources/Private/Templates/

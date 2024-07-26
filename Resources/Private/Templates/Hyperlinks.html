@@ -1,0 +1,21 @@
+<f:if condition="{hyperlinks}">
+    <div class="hyperlinks">
+        <h2>{data.header}</h2>
+        <ul class="hyperlinks-list">
+            <f:for each="{hyperlinks}" as="item">
+                <li class="hyperlinks-list-item">
+                    <f:link.typolink class="hyperlinks-list-item-link" parameter="{item.data.link}">
+                        <f:if condition="{item.data.text}">
+                            <f:then>
+                                {item.data.text}
+                            </f:then>
+                            <f:else>
+                                <f:uri.typolink parameter="{item.data.link}" />
+                            </f:else>
+                        </f:if>
+                    </f:link.typolink>
+                </li>
+            </f:for>
+        </ul>
+    </div>
+</f:if>
