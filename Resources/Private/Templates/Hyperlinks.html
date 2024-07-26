@@ -3,18 +3,20 @@
         <h2>{data.header}</h2>
         <ul class="hyperlinks-list">
             <f:for each="{hyperlinks}" as="item">
-                <li class="hyperlinks-list-item">
-                    <f:link.typolink class="hyperlinks-list-item-link" parameter="{item.data.link}">
-                        <f:if condition="{item.data.text}">
-                            <f:then>
-                                {item.data.text}
-                            </f:then>
-                            <f:else>
-                                <f:uri.typolink parameter="{item.data.link}" />
-                            </f:else>
-                        </f:if>
-                    </f:link.typolink>
-                </li>
+                <f:if condition="{f:uri.typolink(parameter: item.data.link)}">
+                    <li class="hyperlinks-list-item">
+                        <f:link.typolink class="hyperlinks-list-item-link" parameter="{item.data.link}">
+                            <f:if condition="{item.data.text}">
+                                <f:then>
+                                    {item.data.text}
+                                </f:then>
+                                <f:else>
+                                    <f:uri.typolink parameter="{item.data.link}" />
+                                </f:else>
+                            </f:if>
+                        </f:link.typolink>
+                    </li>
+                </f:if>
             </f:for>
         </ul>
     </div>
