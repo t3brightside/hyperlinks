@@ -3,7 +3,7 @@ mod.wizards.newContentElement.wizardItems.common {
     hyperlinks_selected {
       iconIdentifier = mimetypes-x-content-link
       title = Hyperlinks
-      description = List of selected links
+      description = List of hyperlink records
       tt_content_defValues {
         CType = hyperlinks_selected
       }
