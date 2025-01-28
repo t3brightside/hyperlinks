@@ -2,7 +2,6 @@
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 use TYPO3\CMS\Core\Configuration\ExtensionConfiguration;
-use Brightside\Addresses\Preview\AddressesPreviewRenderer;
 
 $GLOBALS['TCA']['tt_content']['ctrl']['typeicon_classes']['hyperlinks_selected'] =  'actions-link';
 
@@ -18,12 +17,12 @@ ExtensionManagementUtility::addTcaSelectItem(
         'value' => 'hyperlinks_selected',
         'icon' => 'actions-link',
         'group' => 'default',
-        'description' => 'Shows selected address records.',
+        'description' => 'Shows list of hyperlinks.',
     ],
     'textmedia',
     'after'
 );
-    // For inline editing of personnel records in addresses
+    // For inline editing of hyperlink records
     $tempColumns = array(
         'tx_hyperlinks' => [
             'label' => 'Hyperlinks',
