@@ -91,7 +91,7 @@ return [
         ],
         'hidden' => [
             'exclude' => 1,
-            'label' => 'Address visible',
+            'label' => 'Hyperlink visible',
             'config' => [
                 'type' => 'check',
                 'renderType' => 'checkboxToggle',
@@ -220,7 +220,7 @@ return [
                 'MM' => 'sys_category_record_mm',
                 'MM_match_fields' => [
                     'fieldname' => 'categories',
-                    'tablenames' => 'tx_addresses_domain_model_address',
+                    'tablenames' => 'tx_hyperlinks_domain_model_hyperlink',
                 ],
                 'MM_opposite_field' => 'items',
                 'foreign_table' => 'sys_category',
